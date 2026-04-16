@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Full Screen">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover,shrink-to-fit=no">
+    <meta name="pinterest" content="nopin">
+    <meta name="referrer" content="origin">
+    <meta name="author" content="VeinSyct">
+    <!-- Locale -->
+    <meta name="description" content="Virtucities is a 3D browser game engine that allows players to explore and meet other players online in virtual experience.">
+    <meta name="keywords" content="#Metaverse,#Game,#JavaScript,#Threejs,#Cannonjs,#WebGL,#WebAR">
+    <meta name="author" content="VeinSyct">
+    <meta name="application-name" content="#RealHolmes">
+    <meta name="robots" content="follow,index,max-snippet:-1,max-video-preview:-1,max-image-preview:large">
+    <link rel="profile" href="https://virtucities.web.app/about.html">
+    <link rel="pingback" href="https://virtucities.web.app/contact.html">
+    <link rel="canonical" href="https://virtucities.web.app">
+    <link rel="next" href="https://virtucities.web.app/shop.html">
+    <!-- Online -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="#RealHolmes">
+    <meta property="og:description" content="Virtucities is a 3D browser game engine that allows players to explore and meet other players online in virtual experience.">
+    <meta property="og:url" content="https://virtucities.web.app">
+    <meta property="og:site_name" content="#RealHolmes">
+    <meta property="og:image" content="assets/images/og.jpg">
+    <meta property="og:image:secure_url" content="assets/images/og.jpg">
+    <meta property="og:image:width" content="128">
+    <meta property="og:image:height" content="128">
+    <meta property="og:image:alt" content="assets/images/og.jpg">
+    <meta property="og:image:type" content="image/jpeg/png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="#RealHolmes">
+    <meta name="twitter:description" content="Virtucities is a 3D browser game engine that allows players to explore and meet other players online in virtual experience.">
+    <meta name="twitter:image" content="assets/images/og.jpg">
+    <!-- Title -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <title>Virtucities</title>
+    <base href="">
+    <!--Firebase-->
+    <script src="assets/js/vemethods.js"></script>
+    <script src="assets/js/interface.js"></script>
+		<script onload="fbLdF=true" src="assets/js/firebase.js"></script>
+    <script src="assets/js/firebase-auth.js"></script>
+		<script src="assets/js/firebase-database.js"></script>
+		<script src="assets/js/firebase-analytics.js"></script>
+    <!--Dependencies-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!--authentication-->
+		<script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
+    <script src="assets/js/stickcontrol.js"></script>
+    <script type="text/javascript">
+      var loadJS=false
+      document.onreadystatechange=()=>{
+        // Start engine
+        if(lsRd('eFirstRun')==null)$('#welcome').show()
+        if(document.readyState==='complete'&&!loadJS){
+          haltF=loadJS=true
+          try{
+            if(isMobile)meAndF=AppInterface.isAndroid()
+          }catch(err){}
+          if(isOnL()){
+            serviceWorker=lsRd('serviceWorker')
+            if(serviceWorker!=null){
+              if('serviceWorker' in navigator){
+                navigator.serviceWorker
+                .register(serviceWorker+'.js')
+                .then(function(registration){
+                })
+                .catch((err)=>{
+                })
+              }
+            }
+            serviceWorker=undefined
+          }
+          if(meAndF)$('#topRightNextEIconMENU').hide()
+          for(i=0;i<uiAssets.length;i++)
+            if(uiAssets[i].includes('css')){
+              loadStyle(uiAssets[i],'head')
+            }else loadScript(uiAssets[i],'head','text/javascript')
+          setTimeout(function(){
+            loadMainUI(allLevels(lsRd('serviceWorker')))
+            $('#welcome').fadeOut('slow')
+            setTimeout(function(){
+              if(isMobile&&orientation==90&&lsRd('reset')==null&&lsRd('eFirstRun')){
+                document.body.style.zoom=orientation==90?1:pageScale().portrait
+                $('#signIn').html(`<img src="assets/images/play.gif"
+                    onclick="$('#signIn').hide()setTimeout(function(){appConnect()isOutdated()},50)"
+                    `+(orientation==0?'width="'+80*pageScale().portrait+'vw"':'height="'+80*pageScale().landscape+'vh"')+`
+                    style="mix-blend-mode:screen"/>`)
+                $('#signIn').fadeIn('slow')
+              }else{
+                $('#signIn').css('opacity:.1')
+                setTimeout(function(){
+                  $('#signIn').fadeIn('slow')
+                },600)
+                appConnect()
+                isOutdated()
+              }
+            },600)
+          },lsRd('eFirstRun')==null?1400:600)
+        }
+      }
+      // Hard reload
+      function isOutdated(){
+        if(myUserID.validity!=cDtNly()){
+          myUserID.validity=cDtNly()
+          lsSv('myUserID',JSON.stringify(myUserID))
+          setTimeout(function(){
+            location.reload(true)
+          },600)
+        }
+      }
+      function loadApp(){
+        if(lsRd('eFirstRun')==null){
+          showPleaseWait(true)
+        }else $('#signIn').html('')
+        $('#closeDialog').show()
+        try{
+          $('#loadingFill').css('width','1%')
+          if(lsRd('eFirstRun')!=null){
+            $('#welcome').fadeOut('fast')
+            $('#loadingBar').fadeIn('slow')
+          }
+          function loadLevels(){
+            try{
+              if(isURL(allLevels(lsRd('serviceWorker'))))loadScript('assets/js/engine.js','head','module')
+            }catch(err){
+              setTimeout(function(){
+                loadLevels()
+              },600)
+            }
+          }
+          loadLevels()
+        }catch(err){
+          if(err.message.match(/(appConnect)/))setTimeout(function(){
+            loadFailed()
+          },30000)
+        }
+      }
+      // Start engine
+      function startEngine(){
+        if(_lz.uid!==undefined)myUserID.uid=_lz.uid
+        try{
+          if(lsRd('eFirstRun')==null&&_lz.getUserName){
+            $('#welcome').fadeOut('slow')
+            $('#closeDialog').hide()
+            opUserID()
+          }else{
+            eng=localStorage.getItem('_experienceParam')
+            if(eng!=null){
+              eng=JSON.parse(eng)
+              $('body').css('background-image','url('+eng.splash+'),url(assets/images/background.jpg)')
+            }else $('body').css('background-image','url(../assets/images/'+_lz.levelName+'.jpg),url(assets/images/background.jpg)')
+            showProgress('10%','#3DCFFF','Initialized.',false)
+            startApp('three-canvas')
+            setTimeout(function(){
+              if($('#progressText').text()=='Initialized.'){
+                lsSv('reset','reset')
+                haltF=true;loadFailed()
+              }
+            },3600)
+            setTimeout(function(){
+              if($('#progressText').text()=='Downloading...')showProgress('86%','blue','Reconnecting...',false)
+              if($('#progressText').text()=='Loading...')showProgress('86%','lightgreen','Downloading...',false)
+              setTimeout(function(){
+                if($('#loadingBar').css('display')!='none'&&$('#progressText').text().match(/(Downloading...|Reconnecting...)/)){
+                  lsSv('reset','reset')
+                  haltF=true;loadFailed()
+                }
+              },7200)
+            },14400)
+          }
+          haltF=false
+        }catch(err){
+          if(err.message.match(/(startApp)/))setTimeout(function(){
+            loadFailed()
+          },15000)
+        }
+      }
+      // Load failed
+      function loadFailed(){
+        if(haltF){
+          $('#loadingFill').css('width','100%')
+          setTimeout(function(){
+            if(meAndF){
+              lsSv('loadmission',location.href)
+              history.back()
+            }else location.reload()
+          },300)
+        }
+      }
+      $(document).ready(function(){
+        // Engine initialize
+      })
+      document.addEventListener("DOMContentLoaded",function(){
+        // System routines
+      })
+    </script>
+  </head>
+  <body oncontextmenu="return false" style="margin:0px;background-image:url(assets/images/promotion.jpg)">
+    <span id="engine-container"></span>
+    <span id="crt-screen"></span>
+  </body>
+</html>
