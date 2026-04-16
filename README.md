@@ -51,6 +51,7 @@ Ideal for large-scale simulation, AI testing, and low-end hardware support.
 - ⚙️ Real-time physics simulation using Cannon.js  
 - 🎮 Interactive sandbox gameplay systems  
 - 🌐 Seamless world streaming architecture (WIP)  
+- 🧑‍🤝‍🧑 Multiplayer support (real-time networked simulation)
 
 ---
 
@@ -60,6 +61,7 @@ Ideal for large-scale simulation, AI testing, and low-end hardware support.
 - **Physics Engine:** Cannon.js  
 - **Language:** JavaScript / TypeScript  
 - **World System:** Multi-city streaming architecture  
+- **Networking:** WebSocket-based multiplayer system  
 - **Asset Pipeline:** Real-time optimized 3D models  
 
 ---
@@ -88,6 +90,7 @@ Inspired by:
 - Entity System – NPCs, vehicles, props  
 - Input Controller – player & camera control  
 - Rendering Pipeline – Three.js WebGL renderer  
+- Network Layer – multiplayer synchronization system  
 
 ---
 
@@ -110,7 +113,7 @@ This creates the illusion of a **single continuous massive world**.
 - [ ] NPC AI navigation system  
 - [ ] Advanced vehicle physics (suspension, drift system)  
 - [ ] Weather system & day/night cycle  
-- [ ] Multiplayer integration (future phase)  
+- [ ] Multiplayer synchronization improvements  
 - [ ] World streaming optimization (LOD + chunking system)  
 - [ ] Advanced lighting & post-processing  
 - [ ] Traffic and city simulation system  
