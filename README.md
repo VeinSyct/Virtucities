@@ -29,7 +29,6 @@ City boundaries are designed to feel **invisible to the player**, creating a con
 
 <img width="1536" height="1024" alt="e7551500-2439-463f-824d-31b6f2ef3a6b" src="https://github.com/user-attachments/assets/aa431143-05d6-4599-b3f0-53a59d4a59d6" />
 
-<img width="1536" height="1024" alt="a3a45e77-4b01-46ea-8a6d-6b237fab2cd8" src="https://github.com/user-attachments/assets/329e4610-1444-4899-bc5d-e8e671bcf17f" />
 **VirtuCities** is a modular virtual world engine that combines real-time rendering, physics simulation, and dynamic world systems to create a scalable open-world experience similar to modern sandbox games.
 
 The core environment is based on the **Pier Island game level**, available in two distinct variants:
