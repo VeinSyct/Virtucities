@@ -35,7 +35,7 @@ The core environment is based on the **Pier Island game level**, available in tw
 
 ### 🏝️ Pier Island Variants
 
-<iframe title="Serini &amp; Suron Island Cities" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/5218d7e81e39409c99d21bbcf679e3f2/embed"> </iframe>
+https://sketchfab.com/3d-models/crateria-96e015d3465945e189bf1cc15f30976a
 
 #### 🎮 Realistic Version
 High-fidelity environment designed for cinematic visuals, advanced lighting, and physically-based rendering (PBR).  
