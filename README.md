@@ -136,6 +136,97 @@ This creates the illusion of a **single continuous massive world**.
 
 ---
 
+## 🚀 Getting Started
+
+### Prerequisites
+
+VirtuCities must be run through a local web server. Opening `virtucities.html` directly from your file system (`file://`) may prevent models, textures, scripts, and other assets from loading correctly due to browser security restrictions.
+
+### Run with VS Code Live Server
+
+1. Open the project folder in Visual Studio Code.
+2. Install the **Live Server** extension if it is not already installed.
+3. Locate `virtucities.html` in the project directory.
+4. Right-click `virtucities.html`.
+5. Select **Open with Live Server**.
+
+The application will automatically launch in your default web browser.
+
+### Alternative Local Server Methods
+
+#### Python
+
+```bash
+python -m http.server 8000
+```
+
+Open:
+
+```text
+http://localhost:8000/virtucities.html
+```
+
+#### Node.js
+
+```bash
+npx serve .
+```
+
+Then open the URL displayed in the terminal.
+
+### Project Entry Point
+
+The main application entry file is:
+
+```text
+virtucities.html
+```
+
+After starting a local server, navigate to:
+
+```text
+http://localhost:<port>/virtucities.html
+```
+
+to launch the VirtuCities simulation.
+
+### Troubleshooting
+
+If the application displays a blank screen or assets fail to load:
+
+* Verify that the project is running through a local web server.
+* Check the browser developer console for errors.
+* Ensure all asset paths and dependencies are present.
+* Refresh the page after making changes.
+* Confirm that JavaScript modules and external assets are loading successfully.
+
+---
+
+## 🎮 Quick Start
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Open the project folder
+cd VirtuCities
+
+# Launch with Live Server
+# or start a local server
+
+python -m http.server 8000
+```
+
+Open your browser and navigate to:
+
+```text
+http://localhost:8000/virtucities.html
+```
+
+You are now ready to explore the VirtuCities open-world simulation.
+
+---
+
 ## 📌 Notes
 
 VirtuCities is a real-time simulation engine focused on combining physics-driven gameplay with cinematic-quality open-world visuals. It is actively under development and evolving toward a scalable multi-city sandbox framework.
